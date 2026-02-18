@@ -5,11 +5,15 @@ import java.util.List;
 
 public class Inscrito {
     private String fecha;
-    private List<Profesor> profesores = new ArrayList<>();
-    private List<Catedra> catedras = new ArrayList<>();
+    private Profesor profesor;
+    private Catedra catedra;
 
-    public Inscrito(String fecha) {
+    public Inscrito(String fecha, Profesor profesor, Catedra catedra) {
         this.fecha = fecha;
+        this.profesor = profesor;
+        this.catedra = catedra;
+        profesor.getCatedras().add(catedra);
+        catedra.getProfesores().add(profesor);
     }
 
     public String getFecha() {
@@ -20,28 +24,28 @@ public class Inscrito {
         this.fecha = fecha;
     }
 
-    public List<Profesor> getProfesores() {
-        return profesores;
+    public Profesor getProfesor() {
+        return profesor;
     }
 
-    public void setProfesores(List<Profesor> profesores) {
-        this.profesores = profesores;
+    public void setProfesor(Profesor profesor) {
+        this.profesor = profesor;
     }
 
-    public List<Catedra> getCatedras() {
-        return catedras;
+    public Catedra getCatedra() {
+        return catedra;
     }
 
-    public void setCatedras(List<Catedra> catedras) {
-        this.catedras = catedras;
+    public void setCatedra(Catedra catedra) {
+        this.catedra = catedra;
     }
 
     @Override
     public String toString() {
         return "Inscrito{" +
                 "fecha='" + fecha + '\'' +
-                ", profesores=" + profesores +
-                ", catedras=" + catedras +
+                ", profesor=" + profesor +
+                ", catedra=" + catedra +
                 '}';
     }
 }

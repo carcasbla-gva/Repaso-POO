@@ -1,9 +1,13 @@
 package Universidad;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Catedra {
     private String nombre;
     private Departamento departamento;
     private Facultad facultad;
+    private List<Profesor> profesores = new ArrayList<>();
 
     public Catedra(String nombre, Departamento departamento, Facultad facultad) {
         this.nombre = nombre;
@@ -36,6 +40,14 @@ public class Catedra {
 
     public void setFacultad(Facultad facultad) {
         this.facultad = facultad;
+    }
+
+    public List<Profesor> getProfesores() {
+        return profesores;
+    }
+
+    public void setProfesores(List<Profesor> profesores) {
+        this.profesores = profesores;
     }
 
     @Override

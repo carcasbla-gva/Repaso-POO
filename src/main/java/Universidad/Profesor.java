@@ -1,8 +1,12 @@
 package Universidad;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Profesor {
     private String nombre;
     private Departamento departamento;
+    private List<Catedra> catedras = new ArrayList<>();
 
     public Profesor(String nombre, Departamento departamento) {
         this.nombre = nombre;
@@ -26,6 +30,14 @@ public class Profesor {
         this.departamento = departamento;
     }
 
+    public List<Catedra> getCatedras() {
+        return catedras;
+    }
+
+    public void setCatedras(List<Catedra> catedras) {
+        this.catedras = catedras;
+    }
+
     @Override
     public String toString() {
         return "Profesor{" +
@@ -33,4 +45,5 @@ public class Profesor {
                 ", departamento=" + departamento +
                 '}';
     }
+
 }
